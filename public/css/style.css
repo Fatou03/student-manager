@@ -1,0 +1,321 @@
+/* ================= Body & Layout ================= */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #f8f4f0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+    width: 90%;
+    max-width: 1200px;
+    margin: 100px auto 80px auto;
+}
+
+/* ================= Navbar ================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #BFA06E;
+    padding: 10px 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.navbar a.active {
+    background-color: #FFD700;
+    color: #fff;
+}
+
+.navbar a:hover {
+    background-color: #D4AF37;
+}
+
+/* ==== Logo dans le header ==== */
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-sm {
+    width: 45px;
+    height: 45px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.app-name {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* ================= Footer ================= */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #F3E5AB;
+    color: #8B5E3C;
+    font-weight: bold;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* ================= Formulaire recherche ================= */
+.form-container {
+    background-color: #fff8e7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #BFA06E;
+}
+
+.form-container form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-container form input,
+.form-container form select,
+.form-container form button,
+.form-container form a {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+}
+
+.form-container form button.btn-success {
+    background-color: #27ae60;
+    color: #fff;
+    border: none;
+}
+
+.form-container form button.btn-success:hover {
+    background-color: #1e8449;
+}
+
+.form-container form a.btn-secondary {
+    background-color: #7f8c8d;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.form-container form a.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* ================= Buttons ================= */
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background-color: #2980b9;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #1c5980;
+}
+
+.btn-danger {
+    background-color: #c0392b;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #922b21;
+}
+
+/* ================= Tables ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table thead tr {
+    background-color: #BFA06E;
+    color: #fff;
+}
+
+table th,
+table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table tr:nth-child(even) {
+    background-color: #fff8e7;
+}
+
+/* ================= Pagination ================= */
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0;
+}
+
+.pagination li {
+    margin: 0;
+}
+
+.pagination li a,
+.pagination li span {
+    display: block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid #BFA06E;
+    color: #BFA06E;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.pagination li.active span {
+    background-color: #BFA06E;
+    color: #fff;
+    border-color: #BFA06E;
+}
+
+.pagination li a:hover {
+    background-color: #D4AF37;
+    color: #fff;
+    border-color: #D4AF37;
+}
+
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination li.disabled span {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+/* ================= Alerts ================= */
+.alert {
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/*  Recherche avancée */
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-line {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-line input,
+.search-line select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    min-width: 150px;
+    flex: 1;
+}
+
+.search-line button,
+.search-line a.btn {
+    padding: 8px 12px;
+    flex: none;
+}
+
+.btn-cancel {
+    background-color: #bfbfbf;
+    color: #333;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-cancel:hover {
+    background-color: #9e9e9e;
+    color: #fff;
+}

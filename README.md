@@ -14,8 +14,23 @@ Application web de gestion des étudiants et des filières
 ![PHP](https://img.shields.io/badge/PHP-8.2-777BB4?style=for-the-badge&logo=php)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql)
 ![Git](https://img.shields.io/badge/Git-Version_Control-F05032?style=for-the-badge&logo=git)
+![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)
 
 </p>
+
+---
+
+## 📋 Sommaire
+
+- [Présentation](#-présentation)
+- [Fonctionnalités](#-fonctionnalités)
+- [Technologies utilisées](#️-technologies-utilisées)
+- [Architecture du projet](#-architecture-du-projet)
+- [Modèle de données](#-modèle-de-données)
+- [Aperçu de l'application](#-aperçu-de-lapplication)
+- [Installation](#-installation)
+- [Compétences développées](#-compétences-développées)
+- [Développeuse](#-développeuse)
 
 ---
 
@@ -23,14 +38,18 @@ Application web de gestion des étudiants et des filières
 
 **Student Manager** est une application web développée avec **Laravel** permettant la gestion des étudiants et des filières dans un établissement.
 
-Ce projet met en pratique les concepts du développement web backend avec Laravel, notamment :
+Ce projet a été réalisé dans le cadre de ma formation en **Génie Logiciel** afin de mettre en pratique le développement d'une application complète avec Laravel.
+
+L'application utilise l'architecture **MVC (Model View Controller)** et une base de données MySQL.
+
+Les concepts mis en pratique sont :
 
 - l'architecture MVC ;
 - les modèles et relations Eloquent ;
-- les migrations ;
+- les migrations Laravel ;
 - les contrôleurs ;
 - les vues Blade ;
-- la gestion d'une base de données MySQL.
+- la gestion d'une base de données relationnelle.
 
 ---
 
@@ -40,15 +59,15 @@ Ce projet met en pratique les concepts du développement web backend avec Larave
 
 L'application permet :
 
-- d'ajouter des étudiants ;
-- d'afficher la liste des étudiants ;
-- de supprimer des étudiants ;
-- de rechercher des étudiants selon plusieurs critères :
+- ✅ Ajouter un étudiant ;
+- ✅ Afficher la liste des étudiants ;
+- ✅ Supprimer un étudiant ;
+- ✅ Rechercher des étudiants selon plusieurs critères :
   - 🔎 nom ;
   - 📧 email ;
   - 📚 filière ;
   - 📅 intervalle de dates de naissance ;
-- d'afficher les résultats avec pagination.
+- ✅ Afficher les résultats avec pagination.
 
 ---
 
@@ -56,10 +75,10 @@ L'application permet :
 
 L'application permet :
 
-- d'ajouter des filières ;
-- d'afficher les filières disponibles ;
-- de supprimer une filière lorsqu'elle ne contient pas d'étudiants ;
-- de gérer la relation entre une filière et ses étudiants.
+- ✅ Ajouter une filière ;
+- ✅ Afficher les filières disponibles ;
+- ✅ Supprimer une filière lorsqu'elle ne contient aucun étudiant ;
+- ✅ Gérer la relation entre une filière et ses étudiants.
 
 ---
 
@@ -102,6 +121,28 @@ student-manager
 
 ---
 
+# 🗄️ Modèle de données
+
+L'application repose principalement sur deux entités :
+
+## 📚 Filière
+
+Une filière peut contenir plusieurs étudiants.
+
+## 👨‍🎓 Étudiant
+
+Un étudiant appartient à une seule filière.
+
+Relation :
+
+```
+Filière (1)  ----------------  (N) Étudiants
+```
+
+Cette relation est gérée avec les relations **Eloquent Laravel**.
+
+---
+
 # 📸 Aperçu de l'application
 
 ## 🏠 Accueil
@@ -114,13 +155,16 @@ student-manager
 
 ## 👨‍🎓 Gestion des étudiants
 
-Recherche avancée et gestion complète des étudiants :
+La gestion des étudiants comprend :
 
-- recherche par nom ;
-- recherche par email ;
-- recherche par filière ;
-- recherche par date ;
-- ajout et suppression d'étudiants.
+- l'ajout d'étudiants ;
+- l'affichage des étudiants ;
+- la suppression ;
+- la recherche multicritère :
+  - par nom ;
+  - par email ;
+  - par filière ;
+  - par date.
 
 <p align="center">
 <img src="screenshots/gestion-etudiants.png" width="85%">
@@ -130,7 +174,11 @@ Recherche avancée et gestion complète des étudiants :
 
 ## 📚 Gestion des filières
 
-Gestion des filières avec ajout, affichage et suppression.
+La gestion des filières permet :
+
+- l'ajout ;
+- l'affichage ;
+- la suppression des filières.
 
 <p align="center">
 <img src="screenshots/gestion-filieres.png" width="85%">
@@ -166,16 +214,20 @@ Créer le fichier `.env` :
 cp .env.example .env
 ```
 
-Configurer ensuite la connexion MySQL :
+Configurer la base de données :
 
 ```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
-DB_PORT=3307
+DB_PORT=3306
 DB_DATABASE=student_manager
 DB_USERNAME=root
 DB_PASSWORD=
 ```
+
+> Si votre serveur MySQL utilise un autre port (par exemple 3307 avec XAMPP), modifiez la valeur de `DB_PORT`.
+
+---
 
 ## 5. Générer la clé Laravel
 
@@ -183,13 +235,17 @@ DB_PASSWORD=
 php artisan key:generate
 ```
 
+---
+
 ## 6. Exécuter les migrations
 
 ```bash
 php artisan migrate
 ```
 
-## 7. Démarrer l'application
+---
+
+## 7. Lancer l'application
 
 ```bash
 php artisan serve
@@ -219,12 +275,18 @@ php artisan serve
 💻 Développement Web & Mobile
 
 Compétences :
+
 - Laravel / PHP
 - Java
 - Flutter
 - MySQL
 - Git / GitHub
 
+GitHub :
+https://github.com/Fatou03
+
 ---
 
+<p align="center">
 ⭐ Merci d'avoir visité ce projet !
+</p>
